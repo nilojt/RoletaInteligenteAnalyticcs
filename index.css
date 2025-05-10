@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 340 82% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 91% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 43 96% 56%;
+  --accent-foreground: 0 0% 12%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  
+  /* Custom colors based on design reference */
+  --dark: 0 0% 7%;
+  --dark-lighter: 0 0% 12%;
+  --dark-light: 0 0% 18%;
+  --chart-1: 340 82% 52%; /* primary */
+  --chart-2: 217 91% 60%; /* secondary */
+  --chart-3: 43 96% 56%; /* accent */
+  --chart-4: 123 46% 57%; /* green */
+  --chart-5: 0 0% 38%; /* dark-gray */
+}
+
+.light {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 340 82% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 91% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 43 96% 56%;
+  --accent-foreground: 0 0% 12%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply antialiased bg-background text-foreground;
+    background-color: hsl(var(--dark));
+    color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .roulette-number {
+    @apply w-9 h-9 rounded-full flex items-center justify-center font-semibold m-1 cursor-pointer transition-all duration-200;
+  }
+  
+  .roulette-number:hover {
+    @apply transform scale-110 shadow-lg;
+  }
+  
+  .red-number {
+    @apply bg-primary text-white;
+  }
+  
+  .black-number {
+    @apply bg-[#1e1e1e] text-white border border-[#333];
+  }
+  
+  .green-number {
+    @apply bg-[#4caf50] text-white;
+  }
+  
+  .predicted-number {
+    @apply w-[50px] h-[50px] rounded-full flex items-center justify-center font-bold mx-1 text-lg shadow-lg shadow-accent/40 animate-pulse;
+  }
+  
+  .round-container {
+    @apply border-l-[3px] border-primary pl-3 mb-4;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-[#1e1e1e];
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
